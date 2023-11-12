@@ -1,9 +1,9 @@
 export interface TaskItemProps {
-  id: number;
+  id: string;
   name: string;
   completed: boolean;
-  deleteTask: (id: number) => void;
-  changeTaskStatus: (id: number) => void;
+  deleteTask: (id: string) => void;
+  changeTaskStatus: (id: string) => void;
 }
 
 export interface TasksProps {

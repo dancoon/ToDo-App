@@ -1,6 +1,8 @@
 import React, { FormEvent, useState } from "react";
 import { FormProps } from "../interfaces/Props";
 import addIcon from "./../assets/add_icon.svg";
+import {v4 as uuid} from "uuid";
+
 
 const Form: React.FC<FormProps> = ({ setTaskList, tasks }) => {
   const [taskName, setTaskName] = useState<string>("");
@@ -12,7 +14,7 @@ const Form: React.FC<FormProps> = ({ setTaskList, tasks }) => {
     const task = tasks[0];
     const taskObject = {
       ...task,
-      id: tasks.length,
+      id: uuid(),
       name: name,
       completed: false,
     };

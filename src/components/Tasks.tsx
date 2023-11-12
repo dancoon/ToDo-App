@@ -33,13 +33,13 @@ const TaskItem: React.FC<TaskItemProps> = ({
 };
 
 const TaskList: React.FC<TasksProps> = ({ tasks, setTaskList }) => {
-  const deleteTask = (id: number) => {
+  const deleteTask = (id: string) => {
     const newTasks = tasks.filter((e) => e.id !== id);
     setTaskList(newTasks);
     localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
 
-  const changeTaskStatus = (id: number) => {
+  const changeTaskStatus = (id: string) => {
     const newTasks = tasks.map((task) =>
       task.id === id ? { ...task, completed: !task.completed } : task
     );
